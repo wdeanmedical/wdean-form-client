@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Images from '@local/assets'
 import { sendOrder } from '../../state/actions'
-import * as Constants from '../../constants/constants'
 import form from '../../config/fields'
 import OrderFormStyled from './order_form_styles'
 
@@ -105,32 +104,6 @@ class OrderForm extends Component {
               Submit
             </OrderFormStyled.button>
           </OrderFormStyled.formControls>
-        )}
-
-        {submitted && (
-          <OrderFormStyled.response>
-            <OrderFormStyled.responseTitle>
-              candy store rep response:
-            </OrderFormStyled.responseTitle>
-            <OrderFormStyled.responseIcons>
-              <OrderFormStyled.responseIcon
-                src={
-                  response === Constants.REJECT
-                    ? Images.thumbsDownSubmitted
-                    : Images.thumbsDown
-                }
-                alt="reject"
-              />
-              <OrderFormStyled.responseIcon
-                src={
-                  response === Constants.ACCEPT
-                    ? Images.thumbsUpSubmitted
-                    : Images.thumbsUp
-                }
-                alt="accept"
-              />
-            </OrderFormStyled.responseIcons>
-          </OrderFormStyled.response>
         )}
         <OrderFormStyled.overlay {...this.state}>
           <OrderFormStyled.overlayContent>

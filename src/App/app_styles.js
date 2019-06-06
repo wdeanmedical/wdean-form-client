@@ -3,7 +3,7 @@ import { Colors } from '../constants/colors'
 
 const AppStyled = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   height: 500px;
   width: 1000px;

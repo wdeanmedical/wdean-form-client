@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import OrderForm from '../forms/OrderForm/OrderForm'
-import ResponseForm from '../forms/ResponseForm/ResponseForm'
 import AppStyled from './app_styles'
 
 class App extends Component {
@@ -10,8 +9,6 @@ class App extends Component {
     return (
       <AppStyled>
         <OrderForm />
-        <AppStyled.screenDivider />
-        <ResponseForm />
       </AppStyled>
     )
   }
