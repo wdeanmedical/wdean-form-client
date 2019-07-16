@@ -1,5 +1,6 @@
 import * as Constants from '../constants/constants'
 import FormTextInput from '../components/FormTextInput/FormTextInput'
+import FormSelectInput from '../components/FormSelectInput/FormSelectInput'
 
 export default [
   {
@@ -55,12 +56,18 @@ export default [
     name: 'specialty',
     label: 'top candy specialty (enter only one):',
     placeholder: 'enter a candy name...',
-    FormComponent: FormTextInput,
+    FormComponent: FormSelectInput,
     value: '',
     state: Constants.ENABLED,
     style: '',
     onChange: undefined,
     onClick: undefined,
+    options: [
+      { value: 'MM', label: 'MMs' },
+      { value: 'MARS', label: 'Mars Bar' },
+      { value: 'MWAY', label: 'Milky Way' },
+      { value: 'SNICK', label: 'Snickers' },
+    ],
   },
   {
     id: 6,
