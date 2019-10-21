@@ -67,12 +67,6 @@ class OrderForm extends Component {
     }
   }
 
-  handleFieldChange = (field, e) => {
-    const { fields } = this.state
-    fields[field] = e.target.value
-    this.setState({ fields })
-  }
-
   formMapper(field) {
     const { FormComponent } = field
     const { fields, errors, submitted } = this.state
@@ -80,10 +74,10 @@ class OrderForm extends Component {
       <FormComponent
         field={field}
         submitted={submitted}
-        handleFieldChange={this.handleFieldChange}
         key={field.id}
         value={fields[field.name]}
         errorMessage={errors[field.name]}
+        currentForm={this}
       />
     )
   }

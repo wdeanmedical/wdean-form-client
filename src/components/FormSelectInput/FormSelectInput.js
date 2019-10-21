@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FieldShape from '../../state/shapes/FieldShape'
 import SelectInputStyled from './form_select_input_styles'
+import { handleFieldChange } from '../../config/functions'
 
 const FormSelectInput = props => {
-  const { field, submitted, handleFieldChange, value, errorMessage } = props
+  const { field, submitted, currentForm, value, errorMessage } = props
   return (
     <SelectInputStyled>
       <SelectInputStyled.itemLabel>{field.label}</SelectInputStyled.itemLabel>
@@ -13,7 +14,7 @@ const FormSelectInput = props => {
         disabled={submitted === true}
         options={field.options}
         value={value}
-        onChange={e => handleFieldChange(field.name, e)}
+        onChange={e => handleFieldChange(field.name, e, currentForm)}
       >
         <option value="">{field.placeholder}</option>
         {field.options.map(option => (

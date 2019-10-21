@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import FieldShape from '../../state/shapes/FieldShape'
 import TextInputStyled from './form_text_input_styles'
+import { handleFieldChange } from '../../config/functions'
 
 const FormTextInput = props => {
-  const { field, submitted, handleFieldChange, value, errorMessage } = props
+  const { field, submitted, currentForm, value, errorMessage } = props
   return (
     <TextInputStyled>
       <TextInputStyled.itemLabel>{field.label}</TextInputStyled.itemLabel>
@@ -14,7 +15,7 @@ const FormTextInput = props => {
         disabled={submitted === true}
         placeholder={field.placeholder}
         value={value}
-        onChange={e => handleFieldChange(field.name, e)}
+        onChange={e => handleFieldChange(field.name, e, currentForm)}
       />
       <TextInputStyled.errorMsg>{errorMessage}</TextInputStyled.errorMsg>
     </TextInputStyled>
