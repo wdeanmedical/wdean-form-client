@@ -6,7 +6,7 @@
     "placeholder": "enter your name...",
     "FormComponent": "FormTextInput",
     "value": "",
-    "state": "Constants.ENABLED",
+    "state": "constants.ENABLED",
     "style": "",
     "onChange": "undefined",
     "onClick": "undefined"
@@ -18,7 +18,7 @@
     "placeholder": "enter your company name...",
     "FormComponent": "FormTextInput",
     "value": "",
-    "state": "Constants.ENABLED",
+    "state": "constants.ENABLED",
     "style": "",
     "onChange": "undefined",
     "onClick": "undefined"
@@ -30,7 +30,7 @@
     "placeholder": "enter your company website...",
     "FormComponent": "FormTextInput",
     "value": "",
-    "state": "Constants.ENABLED",
+    "state": "constants.ENABLED",
     "style": "",
     "onChange": "undefined",
     "onClick": "undefined"
@@ -42,7 +42,7 @@
     "placeholder": "enter your email address...",
     "FormComponent": "FormTextInput",
     "value": "",
-    "state": "Constants.ENABLED",
+    "state": "constants.ENABLED",
     "style": "",
     "onChange": "undefined",
     "onClick": "undefined"
@@ -54,7 +54,7 @@
     "placeholder": "enter a candy name...",
     "FormComponent": "FormSelectInput",
     "value": "",
-    "state": "Constants.ENABLED",
+    "state": "constants.ENABLED",
     "style": "",
     "onChange": "undefined",
     "onClick": "undefined",
@@ -72,7 +72,7 @@
     "placeholder": "enter a suggested price...",
     "FormComponent": "FormTextInput",
     "value": "",
-    "state": "Constants.ENABLED",
+    "state": "constants.ENABLED",
     "style": "",
     "onChange": "undefined",
     "onClick": "undefined"

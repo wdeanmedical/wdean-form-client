@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Images from '@local/assets'
 import { sendOrder } from '../../state/actions'
-import form from '../../config/fields'
 import OrderFormStyled from './order_form_styles'
 
 class OrderForm extends Component {
@@ -83,7 +82,7 @@ class OrderForm extends Component {
   }
 
   render() {
-    const { response } = this.props
+    const { response, form } = this.props
     const { title, message, submitted, overlay } = this.state
     return (
       <OrderFormStyled>
@@ -117,7 +116,8 @@ class OrderForm extends Component {
 
 const mapStateToProps = state => {
   const { response } = state.app
-  return response || {}
+  const { form } = state.form
+  return { response, form }
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -134,7 +134,4 @@ OrderForm.defaultProps = {
   sendOrder: undefined,
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(OrderForm)
+export default connect(mapStateToProps, mapDispatchToProps)(OrderForm)

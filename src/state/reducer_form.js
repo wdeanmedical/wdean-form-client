@@ -1,17 +1,29 @@
 import jsonForm from '../config/fields.json'
-import form from '../config/fields'
 import * as Constants from '../constants/constants'
-import FormTextInput from '../components/FormTextInput/FormTextInput'
-import FormSelectInput from '../components/FormSelectInput/FormSelectInput'
+import * as Components from '../components'
+
+const reviver = (key, value) => {
+  if (typeof value === 'string' && value.startsWith('constants.')) {
+    const constantKey = value.substring('constants.'.length)
+    return Constants[constantKey]
+  }
+  if (key === 'FormComponent') {
+    return Components[value]
+  }
+  if (value === 'undefined') {
+    return undefined
+  }
+  return value
+}
 
 const deserialize = json => {
-  // return JSON.parse(json)
-  return json
+  const parsed = JSON.parse(JSON.stringify(json), reviver)
+  console.log('parsed', parsed)
+  return parsed
 }
 
 const INITIAL_STATE = {
-  formNew: deserialize(jsonForm),
-  form,
+  form: deserialize(jsonForm),
 }
 
 export default function(state = INITIAL_STATE, action) {
