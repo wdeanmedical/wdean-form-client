@@ -18,7 +18,9 @@ const FormSelectInput = props => {
       >
         <option value="">{field.placeholder}</option>
         {field.options.map(option => (
-          <option value={option.value}>{option.label}</option>
+          <option key={option.id} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </SelectInputStyled.select>
       <SelectInputStyled.errorMsg>{errorMessage}</SelectInputStyled.errorMsg>

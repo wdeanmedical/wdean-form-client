@@ -63,10 +63,10 @@ export default [
     onChange: undefined,
     onClick: undefined,
     options: [
-      { value: 'MM', label: 'MMs' },
-      { value: 'MARS', label: 'Mars Bar' },
-      { value: 'MWAY', label: 'Milky Way' },
-      { value: 'SNICK', label: 'Snickers' },
+      { value: 'MM', label: 'MMs', id: 1 },
+      { value: 'MARS', label: 'Mars Bar', id: 2 },
+      { value: 'MWAY', label: 'Milky Way', id: 3 },
+      { value: 'SNICK', label: 'Snickers', id: 4 },
     ],
   },
   {
