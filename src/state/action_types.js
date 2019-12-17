@@ -5,3 +5,4 @@ const createAsyncActionType = action => ({
 })
 
 export const ORDER = createAsyncActionType('order')
+export const GET_FORM = createAsyncActionType('getForm')

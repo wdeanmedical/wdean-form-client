@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Images from '@local/assets'
-import { sendOrder } from '../../state/actions'
+import { sendOrder, getForm } from '../../state/actions'
 import OrderFormStyled from './order_form_styles'
 
 class OrderForm extends Component {
@@ -15,7 +15,10 @@ class OrderForm extends Component {
     overlay: false,
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    const { getForm: dispatchGetForm } = this.props
+    dispatchGetForm()
+  }
 
   validateForm = () => {
     this.setState({
@@ -89,7 +92,7 @@ class OrderForm extends Component {
         <OrderFormStyled.title>{title}</OrderFormStyled.title>
         <OrderFormStyled.subtitle>{message}</OrderFormStyled.subtitle>
 
-        {form.map(this.formMapper, this)}
+        {form && form.map(this.formMapper, this)}
 
         {submitted === false && (
           <OrderFormStyled.formControls>
@@ -122,6 +125,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   sendOrder: order => dispatch(sendOrder(order)),
+  getForm: () => dispatch(getForm()),
 })
 
 OrderForm.propTypes = {

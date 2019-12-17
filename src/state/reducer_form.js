@@ -1,4 +1,4 @@
-import jsonForm from '../config/fields.json'
+import { GET_FORM } from './action_types'
 import * as Constants from '../constants/constants'
 import * as Components from '../components'
 
@@ -23,11 +23,16 @@ const deserialize = json => {
 }
 
 const INITIAL_STATE = {
-  form: deserialize(jsonForm),
+  form: null,
 }
 
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case GET_FORM.SUCCESS:
+      return {
+        ...state,
+        form: deserialize(action.payload),
+      }
     default:
       return state
   }

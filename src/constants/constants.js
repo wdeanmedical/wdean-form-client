@@ -9,3 +9,5 @@ export const TEXT_INPUT = 'text_input'
 
 export const ACCEPT = 'accept'
 export const REJECT = 'reject'
+
+export const API_URL = 'http://localhost:3000/api'
