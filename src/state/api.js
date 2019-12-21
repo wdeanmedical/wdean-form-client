@@ -5,7 +5,7 @@ class API {
   static async getForm() {
     const data = await axios
       .get(`${API_URL}/public/getForm`)
-      .then(result => result.data.form)
+      .then(result => result.data.result.template)
     return data
   }
 }
